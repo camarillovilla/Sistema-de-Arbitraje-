@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="789.0" prefWidth="1472.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ControllerMain">
+   <children>
+      <AnchorPane layoutX="400.0" layoutY="30.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="629.0" style="-fx-background-color: #F4F2F1;">
+         <children>
+            <TableView fx:id="tableViewArticle" layoutX="203.0" layoutY="103.0" prefHeight="250.0" prefWidth="414.0" stylesheets="@Style.css" AnchorPane.rightAnchor="12.0">
+              <columns>
+                <TableColumn id="tableColumnImage" fx:id="tableColumnImage" prefWidth="62.4000244140625" styleClass="table-column-image" />
+                <TableColumn id="tableColumnInformation" fx:id="tableColumnInformation" prefWidth="334.0" styleClass="table-column-information" />
+              </columns>
+            </TableView>
+            <Label layoutX="14.0" layoutY="43.0" text="SISTEMA DE ARBITRAJE" textFill="#945200" AnchorPane.leftAnchor="32.0">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="401.0" layoutY="27.0" lineSpacing="4.0" prefHeight="47.0" prefWidth="216.0" styleClass="spaced_titles" stylesheets="@Style.css" text="B i b l i o t e c a" textFill="#945200" AnchorPane.rightAnchor="32.0">
+               <font>
+                  <Font name="Cambria" size="34.0" />
+               </font>
+            </Label>
+            <Label layoutX="448.0" layoutY="76.0" text="Universidad de Saqqara" textFill="#945200" AnchorPane.rightAnchor="32.0">
+               <font>
+                  <Font name="Times New Roman Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="281.0" layoutY="106.0" prefHeight="22.0" prefWidth="403.0" style="-fx-border-color: #2c907d; -fx-border-width: 0px 0px 3px 0px;" text="Artículos técnico-científicos" textFill="#2c907d" AnchorPane.rightAnchor="32.0">
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="89.0" layoutY="667.0" text="Los artículos recibidos están licenciados bajo el ">
+               <font>
+                  <Font name="Arial" size="7.0" />
+               </font>
+            </Label>
+            <Label layoutX="241.0" layoutY="667.0" text="Creative Commons Attribution Non-comercial Share Alike 3.0 License" textFill="#efb638">
+               <font>
+                  <Font name="Arial" size="7.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="303.0" layoutY="378.0" prefHeight="22.0" prefWidth="403.0" style="-fx-border-color: #2c907d; -fx-border-width: 3px 0px 0px 0px;" textFill="#2c907d" AnchorPane.rightAnchor="32.0">
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font>
+            </Label>
+            <VBox layoutX="25.0" layoutY="177.0" prefHeight="95.0" prefWidth="163.0" AnchorPane.leftAnchor="25.0">
+               <children>
+                  <JFXButton alignment="TOP_LEFT" onMouseClicked="#showReleaseArticles" prefHeight="26.0" prefWidth="159.0" ripplerFill="BLACK" style="-fx-border-color: #945200; -fx-border-width: 0px 0px 1.5px 0px;" text="Artículos publicados" textAlignment="JUSTIFY">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton alignment="TOP_LEFT" onMouseClicked="#showEvaluatedArticles" prefHeight="26.0" prefWidth="159.0" ripplerFill="BLACK" style="-fx-border-color: #945200; -fx-border-width: 0px 0px 1.5px 0px;" text="Evaluación de artículos " textAlignment="JUSTIFY">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></JFXButton>
+                  <JFXButton alignment="TOP_LEFT" onMouseClicked="#showLiberationArticles" prefHeight="26.0" prefWidth="159.0" ripplerFill="BLACK" style="-fx-border-color: #945200; -fx-border-width: 0px 0px 1.5px 0px;" text="Liberación de artículos" textAlignment="JUSTIFY">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton alignment="TOP_LEFT" onMouseClicked="#showRejectedArticles" prefHeight="26.0" prefWidth="159.0" ripplerFill="BLACK" style="-fx-border-color: #945200; -fx-border-width: 0px 0px 1.5px 0px;" text="Artículos rechazados" textAlignment="JUSTIFY">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></JFXButton>
+                  <JFXButton fx:id="buttonExit" alignment="TOP_LEFT" onMouseClicked="#exit" prefHeight="26.0" prefWidth="159.0" ripplerFill="BLACK" text="Salir " textAlignment="JUSTIFY">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></JFXButton>
+               </children>
+            </VBox>
+            <AnchorPane fx:id="anchorPaneArticleEvaluation" layoutX="46.0" layoutY="399.0" prefHeight="262.0" prefWidth="557.0" style="-fx-background-color: white;" visible="false">
+               <children>
+                  <Label layoutX="7.0" layoutY="7.0" text="Evaluación de artículo">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="7.0" layoutY="85.0" prefHeight="18.0" prefWidth="226.0" text="Concepto de evaluación (obligatorio)" textFill="#7f7f7f">
+                     <font>
+                        <Font name="Arial" size="11.0" />
+                     </font>
+                  </Label>
+                  <VBox layoutX="8.0" layoutY="101.0" prefHeight="103.0" prefWidth="245.0">
+                     <children>
+                        <Label prefHeight="25.0" prefWidth="246.0" text="1. Estructura general.........................................(0-10)" textFill="#7f7f7f">
+                           <font>
+                              <Font name="Arial Bold" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="25.0" prefWidth="254.0" text="2. Introducción (problemática y objetivo).......(0-20)" textFill="#7f7f7f">
+                           <font>
+                              <Font name="Arial Bold" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="25.0" prefWidth="253.0" text="3. Congruencia metodológica..........................(0-40)" textFill="#7f7f7f">
+                           <font>
+                              <Font name="Arial Bold" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="25.0" prefWidth="251.0" text="4. Resultados.....................................................(0-20)" textFill="#7f7f7f">
+                           <font>
+                              <Font name="Arial Bold" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="25.0" prefWidth="252.0" text="5. Literatura citada............................................(0-10)" textFill="#7f7f7f">
+                           <font>
+                              <Font name="Arial Bold" size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="252.0" layoutY="99.0" prefHeight="106.0" prefWidth="35.0">
+                     <children>
+                        <TextField fx:id="textField1" prefHeight="18.0" prefWidth="33.0">
+                           <font>
+                              <Font size="7.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="1.5" left="1.0" right="1.0" top="1.5" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="textField2" prefHeight="18.0" prefWidth="33.0">
+                           <font>
+                              <Font size="7.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="1.5" left="1.0" right="1.0" top="1.5" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="textField3" prefHeight="18.0" prefWidth="33.0">
+                           <font>
+                              <Font size="7.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="1.5" left="1.0" right="1.0" top="1.5" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="textField4" prefHeight="18.0" prefWidth="33.0">
+                           <font>
+                              <Font size="7.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="1.5" left="1.0" right="1.0" top="1.5" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="textField5" prefHeight="18.0" prefWidth="33.0">
+                           <font>
+                              <Font size="7.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="1.5" left="1.0" right="1.0" top="1.5" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label fx:id="labelTotal" prefHeight="18.0" prefWidth="33.0" style="-fx-border-color: #BEBEBE; -fx-border-radius: 3;">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <Label layoutX="396.0" layoutY="97.0" prefHeight="32.0" prefWidth="135.0" text="¿Considera que el trabajo tiene la calidad para ser aceptado?" textFill="#7f7f7f" wrapText="true">
+                     <font>
+                        <Font name="Arial Bold" size="9.0" />
+                     </font>
+                  </Label>
+                  <JFXRadioButton fx:id="radioButtonAceppted" layoutX="397.0" layoutY="136.0" prefHeight="18.0" prefWidth="52.0" text="sí" textFill="#7f7f7f">
+                     <font>
+                        <Font name="Arial" size="9.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="isAccepted" />
+                     </toggleGroup>
+                  </JFXRadioButton>
+                  <JFXRadioButton fx:id="radioButtonNotAceppted" layoutX="447.0" layoutY="136.0" prefHeight="18.0" prefWidth="52.0" text="no" textFill="#7f7f7f" toggleGroup="$isAccepted">
+                     <font>
+                        <Font name="Arial" size="9.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXRadioButton>
+                  <Label fx:id="labelArticleTitle" layoutX="9.0" layoutY="23.0" prefHeight="32.0" prefWidth="539.0" wrapText="true">
+                     <font>
+                        <Font name="Arial" size="11.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelMoreArticleInformation" layoutX="9.0" layoutY="55.0" prefHeight="32.0" prefWidth="538.0" wrapText="true">
+                     <font>
+                        <Font name="Arial" size="11.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="5.0" layoutY="213.0" prefHeight="47.0" prefWidth="166.0" text="Considere  que con una evaluación inferioir al 70%, es recomendable como NO aprobado el artículo " wrapText="true">
+                     <font>
+                        <Font name="Arial" size="9.0" />
+                     </font>
+                  </Label>
+                  <JFXButton layoutX="481.0" layoutY="231.0" onMouseClicked="#confirmArticleEvaluation" prefHeight="14.0" prefWidth="66.0" style="-fx-background-color: #D8D8D8;" text="Aceptar">
+                     <font>
+                        <Font name="Arial" size="9.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="193.0" layoutY="222.0" onMouseClicked="#addValuesToEvaluate" style="-fx-background-color: #D8D8D8;" text="TOTAL">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children></AnchorPane>
+            <Label layoutX="470.0" layoutY="357.0" onMouseClicked="#clickedBack" prefHeight="16.0" prefWidth="58.0" styleClass="selectable_label" stylesheets="@Style.css" text="&lt;&lt;Antetior" textFill="#efb638">
+               <font>
+                  <Font name="Arial" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="537.0" layoutY="356.0" onMouseClicked="#clickedNext" prefHeight="16.0" prefWidth="65.0" styleClass="selectable_label" stylesheets="@Style.css" text="Siguiente&gt;&gt;" textFill="#efb638">
+               <font>
+                  <Font name="Arial" size="11.0" />
+               </font>
+            </Label>
+            <Line endX="0.4000244140625" endY="17.000030517578125" layoutX="529.0" layoutY="356.0" startX="0.4000244140625" startY="1.000030517578125" />
+            <AnchorPane fx:id="anchorPaneLiberation" layoutX="280.0" layoutY="412.0" prefHeight="242.0" prefWidth="320.0" visible="false">
+               <children>
+                  <AnchorPane prefHeight="162.0" prefWidth="326.0" style="-fx-background-color: white;">
+                     <children>
+                        <Label layoutX="16.0" layoutY="9.0" prefHeight="38.0" prefWidth="295.0" text="La liberación de un artículo, permite la publicación en línea de manera automática." textFill="#efb638" wrapText="true">
+                           <font>
+                              <Font name="Arial Bold" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="15.0" layoutY="50.0" prefHeight="27.0" prefWidth="295.0" text="¿Está seguro de la liberación?" wrapText="true">
+                           <font>
+                              <Font name="Arial Bold" size="10.0" />
+                           </font>
+                        </Label>
+                        <JFXButton layoutX="190.0" layoutY="131.0" onMouseClicked="#acceptArticleLiberation" prefHeight="14.0" prefWidth="66.0" style="-fx-background-color: #D8D8D8;" text="Aceptar">
+                           <font>
+                              <Font name="Arial" size="9.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="90.0" layoutY="132.0" onMouseClicked="#canceltArticleLiberation" prefHeight="14.0" prefWidth="66.0" style="-fx-background-color: #D8D8D8;" text="Cancelar">
+                           <font>
+                              <Font name="Arial" size="9.0" />
+                           </font>
+                        </JFXButton>
+                        <Label fx:id="labelArticleTitleLiberation" alignment="TOP_LEFT" layoutX="16.0" layoutY="73.0" prefHeight="46.0" prefWidth="296.0" wrapText="true">
+                           <font>
+                              <Font name="Arial" size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="266.0" layoutY="136.0" prefHeight="195.0" prefWidth="9.0" style="-fx-background-color: #F4F2F1;;" />
+            <AnchorPane layoutX="394.6" layoutY="-63.0" prefHeight="410.0" prefWidth="28.0" rotate="90.0" style="-fx-background-color: #F4F2F1;;" AnchorPane.rightAnchor="207.0" />
+            <AnchorPane layoutX="603.0" layoutY="147.0" prefHeight="187.0" prefWidth="18.0" style="-fx-background-color: #F4F2F1;;" />
+            <VBox layoutX="19.0" layoutY="185.0" prefHeight="94.0" prefWidth="12.0">
+               <children>
+                  <ImageView fx:id="imageView1" fitHeight="13.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/triangle.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imageView2" fitHeight="13.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../images/triangle.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <ImageView fx:id="imageView3" fitHeight="13.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../images/triangle.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <ImageView fx:id="imageView4" fitHeight="13.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../images/triangle.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </ImageView>
+               </children>
+            </VBox>
+         </children>
+         <effect>
+            <DropShadow height="94.88" radius="52.3" width="116.32" />
+         </effect>
+      </AnchorPane>
+   </children>
+</AnchorPane>

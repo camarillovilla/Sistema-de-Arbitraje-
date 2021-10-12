@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="SistemaDeArbitraje.jnlp">
+    <information>
+        <title>SistemaDeArbitraje</title>
+        <vendor>Propietario</vendor>
+        <description>null</description>
+        <offline-allowed/>
+    </information>
+    <update check="always"/>
+    <resources>
+        <j2se version="9.0.4+" href="http://java.sun.com/products/autodl/j2se"/>
+        <jar href="SistemaDeArbitraje.jar" size="90814" download="eager"/>
+        <jar href="lib\jfoenix-9.0.10.jar" size="2432549" download="eager"/>
+        <jar href="lib\mysql-connector-java-8.0.23.jar" size="2415211" download="eager"/>
+    </resources>
+    <jfx:javafx-desc width="800" height="600" main-class="gui.SistemaDeArbitraje" name="SistemaDeArbitraje"/>
+</jnlp>
+
